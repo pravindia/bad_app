@@ -1,0 +1,43 @@
+name: bmi
+description: a simple bmi calculator
+publish_to: none
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.1 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  intl: ^0.17.0
+  flutter_localizations:
+    sdk: flutter
+    version: ^0.0.0
+  flutter_bloc: ^8.1.1
+  equatable: ^2.0.5
+  dartz: ^0.10.1
+  simple_connection_checker: ^0.2.1
+  connectivity_plus: ^3.0.2
+  get_it: ^7.2.0
+  gap: ^2.0.0
+  injectable: ^1.5.3
+  freezed_annotation: ^2.2.0
+  beamer: ^1.5.3
+  hive: ^2.0.6
+  uuid: ^3.0.6
+  hive_flutter: ^1.1.0
+  ansicolor: ^2.0.1
+  http: ^0.13.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^1.0.4
+  build_runner: ^2.1.7
+  injectable_generator:
+  freezed: '>=1.1.0'
+
+flutter:
+  uses-material-design: true
+  generate: true

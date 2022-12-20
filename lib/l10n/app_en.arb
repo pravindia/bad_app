@@ -1,0 +1,71 @@
+{
+    "appName": "BMI",
+    "@appName": {
+        "description": "The name of the app"
+    },
+    "welcomeToMessage": "Welcome to",
+    "@welcomeToMessage": {
+        "description": "The welcome message"
+    },
+    "newUserText": "Are you a new user?",
+    "@newUserText": {
+        "description": "The text for the new user question"
+    },
+    "loginTitle": "Login to your account",
+    "@loginTitle": {
+        "description": "The title of the login page"
+    },
+    "login": "Login",
+    "@login": {
+        "description": "The text of the login button"
+    },
+    "createAccountTitle": "Create a new account",
+    "@createAccountTitle": {
+        "description": "The title of the create account screen"
+    },
+    "createAccount": "Create account",
+    "@createAccount": {
+        "description": "The text of the create account button"
+    },
+    "fullName": "Full Name",
+    "@fullName": {
+        "description": "The label for the full name field"
+    },
+    "password": "Password",
+    "@password": {
+        "description": "The label for the password field"
+    },
+    "passwordHelper": "Password must be at least 6 characters",
+    "@passwordHelper": {
+        "description": "The helper text for the password field"
+    },
+    "email": "Email",
+    "@email": {
+        "description": "The label for the email field"
+    },
+    "logout": "Logout",
+    "@logout": {
+        "description": "The text/tooltip of the logout button"
+    },
+    "cancel": "Cancel",
+    "@cancel": {
+        "description": "The text/tooltip of the cancel button"
+    },
+    "yes": "Yes",
+    "no": "No",
+    "sureToLogout": "Are you sure to logout?",
+    "height": "Height ( cm )",
+    "weight": "Weight ( kg )",
+    "heightNote": "The value must be between 100 - 250 cm",
+    "weightNote": "The value must be greater than 10 kg",
+    "addRecord": "Add Record",
+    "pastRecords": "Record History",
+    "heightAndWeight": "Height: {height} kg\nWeight: {weight} cm",
+    "@heightAndWeight": {
+        "placeholders": {
+            "height": {},
+            "weight": {}
+        }
+    }
+
+}
