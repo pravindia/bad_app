@@ -108,7 +108,7 @@ class MinimumLengthValidator extends Validator<String?> {
   final int minLength;
 
   @override
-  bool isValid(String? value) => value != null && value.length < minLength;
+  bool isValid(String? value) => value != null && value.length > minLength;
 }
 
 /// {@template max_length_validator}

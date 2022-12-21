@@ -91,7 +91,7 @@ class _HomePageState extends State<HomePage> {
                     orElse: SizedBox.shrink,
                     loaded: (records) => ListView.separated(
                       separatorBuilder: (context, index) => const Divider(),
-                      itemCount: 1,
+                      itemCount: records.length,
                       itemBuilder: (context, index) {
                         final item = records[index];
                         return ListTile(

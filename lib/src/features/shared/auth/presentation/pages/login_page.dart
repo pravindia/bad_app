@@ -93,7 +93,7 @@ class _LoginPageState extends State<LoginPage> {
                         textInputAction: TextInputAction.next,
                         validator: FormValidator([
                           const RequiredValidator(),
-                          EmailValidator(message: localization.email),
+                          EmailValidator(message: localization.emailHelper),
                         ]),
                         enabled: !loading,
                         autofocus: true,

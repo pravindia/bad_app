@@ -53,7 +53,7 @@ class BMIRecordEntity extends Equatable {
 
   /// get bmi value for this record
   double get bmi {
-    return weight / pow(height, 2);
+    return (weight / pow(height, 2)) * 10000;
   }
 
   /// color code for the bmi
@@ -132,7 +132,7 @@ class BMIRecordEntity extends Equatable {
 
 class BmiRecordAdapter extends TypeAdapter<BMIRecordEntity> {
   @override
-  final typeId = 2578;
+  final typeId = 1;
 
   @override
   BMIRecordEntity read(BinaryReader reader) {

@@ -17,7 +17,7 @@ class BmiFormBottomSheet extends StatefulWidget {
   State<BmiFormBottomSheet> createState() => _BmiFormBottomSheetState();
 
   Future<void> show(BuildContext context) async {
-    showBottomSheet(
+    await showModalBottomSheet(
       context: context,
       builder: (context) {
         return BottomSheet(
@@ -33,6 +33,7 @@ class BmiFormBottomSheet extends StatefulWidget {
 class _BmiFormBottomSheetState extends State<BmiFormBottomSheet> {
   late final TextEditingController _heightController;
   late final TextEditingController _weightController;
+  final _formKey = GlobalKey<FormState>();
 
   @override
   void initState() {
@@ -54,6 +55,7 @@ class _BmiFormBottomSheetState extends State<BmiFormBottomSheet> {
     return Padding(
       padding: EdgeInsets.only(bottom: bottom),
       child: Form(
+        key: _formKey,
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(AppConstraints.mediumSpace),
           child: Column(
@@ -64,14 +66,14 @@ class _BmiFormBottomSheetState extends State<BmiFormBottomSheet> {
                 controller: _heightController,
                 decoration: InputDecoration(
                   labelText: localization.height,
-                  helperText: localization.weightNote,
+                  helperText: localization.heightNote,
                 ),
                 textInputAction: TextInputAction.next,
                 keyboardType: TextInputType.number,
                 validator: const FormValidator([
                   RequiredValidator(),
                   MinimumValueValidator(minValue: 100),
-                  MaximumValueValidator(maxValue: 260),
+                  MaximumValueValidator(maxValue: 250),
                 ]),
                 autofocus: true,
               ),
@@ -82,7 +84,6 @@ class _BmiFormBottomSheetState extends State<BmiFormBottomSheet> {
                   labelText: localization.weight,
                   helperText: localization.weightNote,
                 ),
-                obscureText: true,
                 onFieldSubmitted: (_) => _create(context),
                 textInputAction: TextInputAction.done,
                 keyboardType: TextInputType.number,
@@ -107,15 +108,15 @@ class _BmiFormBottomSheetState extends State<BmiFormBottomSheet> {
     final cubit = context.read<BmiCubit>();
     final navigator = Navigator.of(context);
 
-    final formState = Form.of(context);
+    final formState = _formKey.currentState;
 
     if (formState == null) return;
 
     if (formState.validate()) {
       await cubit.saveRecord(
         BMIRecordEntity(
-          height: double.parse(_weightController.text),
-          weight: double.parse(_heightController.text),
+          height: double.parse(_heightController.text),
+          weight: double.parse(_weightController.text),
           timestamp: DateTime.now(),
         ),
       );
