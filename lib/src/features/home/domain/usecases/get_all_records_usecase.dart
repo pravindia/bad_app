@@ -1,3 +1,5 @@
+import 'package:injectable/injectable.dart';
+
 import '../../../../core/base/type_defs.dart';
 import '../../../../core/base/usecase.dart';
 import '../entities/bmi_record.dart';
@@ -6,6 +8,7 @@ import '../repository/bmi_repository.dart';
 /// {@template get_all_records_usecase}
 /// Get list of past recorded BMI values
 /// {@endtemplate}
+@lazySingleton
 class GetAllRecords implements IUseCase<List<BMIRecordEntity>, NoParams> {
   /// {@macro get_all_records_usecase}
   const GetAllRecords(

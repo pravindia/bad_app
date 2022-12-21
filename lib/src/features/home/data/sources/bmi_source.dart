@@ -64,7 +64,7 @@ class BmiSource implements IBmiSource {
 
     final records = await getAllBmiRecords();
     if (records.isEmpty) return null;
-    return records.last;
+    return records.first;
   }
 
   @override
@@ -75,7 +75,7 @@ class BmiSource implements IBmiSource {
     final id = const Uuid().v4();
     await _db.bmiBox.put(
       id,
-      entry.copyWith(id: id, userId: id),
+      entry.copyWith(id: id, userId: userId),
     );
 
     return true;

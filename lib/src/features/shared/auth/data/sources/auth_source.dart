@@ -44,7 +44,7 @@ class LocalAuthSource implements IAuthSource {
     if (users.isEmpty) {
       final index = await _db.authBox.add({
         ...signupDTO.toMap(),
-        '_id': const Uuid().v4(),
+        'id': const Uuid().v4(),
       });
       final user = UserModel.fromMap(_db.authBox.getAt(index));
       await _db.authBox.put("loggedIn", user.toMap());
@@ -89,8 +89,8 @@ class LocalAuthSource implements IAuthSource {
   }
 
   @override
-  Future<void> logoutUser() {
-    throw UnimplementedError();
+  Future<void> logoutUser() async {
+    await _db.authBox.put('loggedIn', null);
   }
 
   @override

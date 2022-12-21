@@ -43,6 +43,10 @@
     "@email": {
         "description": "The label for the email field"
     },
+    "emailHelper": "Please enter a valid email address.",
+    "@emailHelper": {
+        "description": "The error for the invalid email field"
+    },
     "logout": "Logout",
     "@logout": {
         "description": "The text/tooltip of the logout button"
@@ -60,7 +64,7 @@
     "weightNote": "The value must be greater than 10 kg",
     "addRecord": "Add Record",
     "pastRecords": "Record History",
-    "heightAndWeight": "Height: {height} kg\nWeight: {weight} cm",
+    "heightAndWeight": "Height: {height} cm\nWeight: {weight} kg",
     "@heightAndWeight": {
         "placeholders": {
             "height": {},
